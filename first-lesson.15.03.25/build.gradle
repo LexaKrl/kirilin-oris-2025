@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+    id 'war'
+}
+
+group = 'com.kirilin'
+version = 'unspecified'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+application {
+    mainClass = "com.kirilin.Main"
+}
+
+dependencies {
+    implementation 'org.springframework:spring-webmvc:6.2.3'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:11.0.5'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.1.0'
+}
