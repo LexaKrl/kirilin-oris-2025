@@ -11,7 +11,6 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = "com.kirilin")
@@ -20,6 +19,7 @@ public class WebMvcConfig implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(WebMvcConfig.class);
+        rootContext.register(DataBaseConfig.class);
         servletContext.addListener(new ContextLoaderListener(rootContext));
 
         AnnotationConfigWebApplicationContext webContext = new AnnotationConfigWebApplicationContext();
