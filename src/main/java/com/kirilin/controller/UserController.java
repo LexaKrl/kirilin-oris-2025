@@ -7,6 +7,7 @@ import com.kirilin.service.HelloService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -38,7 +39,7 @@ public class UserController {
 
     @PostMapping("/registration")
     @ResponseStatus(HttpStatus.CREATED)
-    public void register(@ModelAttribute("user") User user) {
+    public void register(@ModelAttribute("user") User user, BindingResult result) {
         userRepository.save(user);
     }
 }

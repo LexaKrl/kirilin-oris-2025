@@ -8,3 +8,6 @@
 
 rootProject.name = 'kirilin-oris-2025'
 
+include 'spring-boot'
+
+

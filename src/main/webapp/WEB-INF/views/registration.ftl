@@ -11,12 +11,12 @@
 <form action="<@spring.url '/users/registration'/>" method="post">
     <div class="form-group">
         <label for="username">Username:</label>
-        <@spring.formInput "user.username", 'class="form-control" id="username" required'/>
+        <input id="username" type="text" name="username">
     </div>
 
     <div class="form-group">
         <label for="password">Password:</label>
-        <@spring.formPasswordInput "user.password", 'class="form-control" id="password" required'/>
+        <input id="password" type="text" name="password">
     </div>
 
     <button type="submit">Register</button>
